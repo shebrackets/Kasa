@@ -1,17 +1,28 @@
-export default async function Page() {
-  const data = await fetch('http://localhost:3000/api/properties')
-  const properties = await data.json()
+import Hero from "@/components/Hero/Hero";
+import PropertyCard from "@/components/PropertyCard/PropertyCard";
+import HowItWorks from "@/components/HowItWorks/HowItWorks";
+import { getProperties } from "@/lib/api";
+import styles from "./page.module.css";
+
+export default async function HomePage() {
+  const properties = await getProperties();
+
   return (
-    <ul>
-      {properties.map((property) => (
-        <li key={property.id}>
-          {property.title},
-          {property.description},
-          {property.cover},
-          {property.location},
-          {property.price_per_night}
-          </li>
-      ))}
-    </ul>
-  )
+    <div className={styles.container}>
+      <Hero />
+      <section className={styles.propertiesSection} aria-labelledby="properties-heading">
+        <h2 id="properties-heading" className="sr-only">
+          Nos logements
+        </h2>
+        <ul className={styles.grid}>
+          {properties.map((property) => (
+            <li key={property.id}>
+              <PropertyCard property={property} />
+            </li>
+          ))}
+        </ul>
+      </section>
+      <HowItWorks />
+    </div>
+  );
 }

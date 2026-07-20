@@ -1,0 +1,43 @@
+.hero {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 40px;
+  width: 100%;
+}
+
+.textGroup {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  width: 100%;
+  max-width: 742px;
+  text-align: center;
+}
+
+.title {
+  font-size: 32px;
+  font-weight: 700;
+  color: var(--color-main-red);
+  line-height: 1.4;
+}
+
+.subtitle {
+  font-size: 14px;
+  color: var(--color-noir);
+  line-height: 1.4;
+}
+
+.banner {
+  width: 100%;
+  height: 458px;
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+.bannerImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}

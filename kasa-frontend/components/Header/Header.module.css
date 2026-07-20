@@ -1,0 +1,161 @@
+.headerWrapper {
+  width: 100%;
+  max-width: 782px;
+  margin: 0 auto;
+  padding: 40px 0 40px 0;
+}
+
+.bar {
+  max-width: var(--container-width);
+  margin: 0 auto;
+  background: var(--color-white);
+  border-radius: var(--radius-lg);
+  box-shadow: 0 4px 4px 0 rgba(182, 182, 182, 0.05);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 8px 100px;
+}
+
+.navLeft,
+.navRight {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+}
+
+.navLink {
+  font-size: 14px;
+  color: var(--color-noir);
+}
+
+.navLink:hover {
+  opacity: 0.7;
+}
+
+.logoLink {
+  display: inline-flex;
+  align-items: center;
+}
+
+.logoPicto {
+  display: none;
+}
+
+.addLink {
+  font-size: 14px;
+  color: var(--color-main-red);
+}
+
+.addLink:hover {
+  opacity: 0.8;
+}
+
+.iconGroup {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.iconDivider {
+  width: 1px;
+  height: 6px;
+  background: var(--color-dark-orange);
+}
+
+.iconButton {
+  display: inline-flex;
+  color: var(--color-noir);
+}
+
+.iconButton:hover {
+  color: var(--color-main-red);
+}
+
+.menuButton {
+  display: none;
+  background: none;
+  border: none;
+  color: var(--color-noir);
+  cursor: pointer;
+  padding: 4px;
+}
+
+.mobileMenu {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .headerWrapper {
+    padding: 0;
+  }
+
+  .bar {
+    max-width: none;
+    border-radius: 0;
+    box-shadow: none;
+    padding: 16px;
+  }
+
+  .navLeft,
+  .navRight {
+    display: none;
+  }
+
+  .logoFull {
+    display: none;
+  }
+
+  .logoPicto {
+    display: inline-flex;
+  }
+
+  .menuButton {
+    display: inline-flex;
+  }
+
+  .mobileMenu {
+    display: flex;
+    flex-direction: column;
+    background: var(--color-white);
+    padding: 24px 16px 32px;
+    gap: 24px;
+  }
+
+  .mobileLinkList {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .mobileLinkItem {
+    padding: 14px 0;
+    border-bottom: 1px solid var(--color-gris-light);
+  }
+
+  .mobileLinkItem:last-child {
+    border-bottom: none;
+  }
+
+  .mobileNavLink {
+    display: block;
+    font-size: 20px;
+    color: var(--color-noir);
+  }
+
+  .mobileAddButton {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    align-self: flex-start;
+    background: var(--color-main-red);
+    color: var(--color-white);
+    font-size: 14px;
+    font-weight: 500;
+    padding: 8px 32px;
+    border-radius: var(--radius-lg);
+  }
+
+  .mobileAddButton:hover {
+    opacity: 0.9;
+  }
+}
