@@ -32,3 +32,32 @@ export function CloseIcon({ color = "var(--color-noir)", ...props }) {
   );
 }
 
+export function StarIcon({ color = "currentColor", ...props }) {
+  return (
+    <svg viewBox="0 0 24 24" width="16" height="16" fill={color} xmlns="http://www.w3.org/2000/svg" {...props}>
+      <path d="M12 2.5l2.9 6.3 6.8.7-5.1 4.6 1.5 6.8L12 17.6l-6.1 3.3 1.5-6.8-5.1-4.6 6.8-.7L12 2.5Z" />
+    </svg>
+  );
+}
+
+export function PinIcon({ color = "currentColor", ...props }) {
+  return (
+    <svg viewBox="0 0 10 13" width="10" height="13" fill="none" xmlns="http://www.w3.org/2000/svg" {...props}>
+      <path
+        fillRule="evenodd"
+        clipRule="evenodd"
+        d="M5 0C2.239 0 0 2.208 0 4.933 0 8.633 5 13 5 13s5-4.367 5-8.067C10 2.208 7.761 0 5 0Zm0 6.7a1.767 1.767 0 1 1 0-3.533A1.767 1.767 0 0 1 5 6.7Z"
+        fill={color}
+      />
+    </svg>
+  );
+}
+
+export function ArrowLeftIcon({ color = "currentColor", ...props }) {
+  return (
+    <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke={color} strokeWidth="1.8" xmlns="http://www.w3.org/2000/svg" {...props}>
+      <path d="M19 12H5M11 6l-6 6 6 6" strokeLinecap="round" strokeLinejoin="round" />
+    </svg>
+  );
+}
+

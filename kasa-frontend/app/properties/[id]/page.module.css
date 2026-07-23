@@ -1,0 +1,122 @@
+.container {
+  /* Largeur de contenu fixe issue de la maquette Figma (616px galerie + 10px gap + 345px hôte) */
+  max-width: 970px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 345px;
+  grid-template-areas:
+    "back back"
+    "gallery host"
+    "description .";
+  column-gap: 10px;
+  row-gap: 24px;
+}
+
+.backRow {
+  grid-area: back;
+  width: 100%;
+  border-bottom: 0.5px solid var(--color-gris-light);
+  padding: 16px 7px;
+}
+
+.backLink {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  align-self: start;
+  background: var(--color-gris-light);
+  color: var(--color-gris-dark);
+  font-size: 14px;
+  font-weight: 500;
+  border-radius: var(--radius-lg);
+  padding: 8px 16px;
+}
+
+.gallery {
+  grid-area: gallery;
+}
+
+.host {
+  grid-area: host;
+}
+
+.description {
+  grid-area: description;
+  background: var(--color-white);
+  border: 1px solid var(--color-gris-light);
+  border-radius: var(--radius-lg);
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.heading {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.title {
+  font-size: 24px;
+  font-weight: 500;
+  color: var(--color-noir);
+}
+
+.location {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+  color: var(--color-gris-dark);
+}
+
+.text {
+  margin-top: 16px;
+  font-size: 14px;
+  color: var(--color-noir);
+  line-height: 1.4;
+}
+
+.equipmentsSection {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  max-width: 316px;
+}
+
+.categorySection {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  max-width: 316px;
+}
+
+.sectionTitle {
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--color-noir);
+}
+
+.tagGrid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 100px));
+  gap: 8px;
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding: 24px 16px 40px;
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "back"
+      "gallery"
+      "description"
+      "host";
+    row-gap: 10px;
+  }
+
+  .backRow {
+    padding: 12px 0;
+  }
+}

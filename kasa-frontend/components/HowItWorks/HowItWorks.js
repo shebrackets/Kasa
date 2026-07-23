@@ -18,13 +18,13 @@ const STEPS = [
 export default function HowItWorks() {
   return (
     <section className={styles.section}>
-      <div className={styles.intro}>
+      <header className={styles.intro}>
         <h2 className={styles.title}>Comment ça marche ?</h2>
         <p className={styles.description}>
           Que vous partiez pour un week-end improvisé, des vacances en famille ou un voyage
           professionnel, Kasa vous aide à trouver un lieu qui vous ressemble.
         </p>
-      </div>
+      </header>
       <ol className={styles.steps}>
         {STEPS.map((step) => (
           <li key={step.title} className={styles.step}>
