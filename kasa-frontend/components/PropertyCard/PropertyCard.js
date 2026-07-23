@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { HeartIcon } from "../icons/Icons";
+import FavoriteButton from "../FavoriteButton/FavoriteButton";
 import styles from "./PropertyCard.module.css";
 
 export default function PropertyCard({ property }) {
@@ -7,9 +7,11 @@ export default function PropertyCard({ property }) {
     <Link href={`/properties/${property.id}`} className={styles.card}>
       <figure className={styles.imageWrapper}>
         <img src={property.cover} alt={property.title} className={styles.image} />
-        <span className={styles.favorite} aria-hidden="true">
-          <HeartIcon color="var(--color-noir)" />
-        </span>
+        <FavoriteButton
+          propertyId={property.id}
+          title={property.title}
+          className={styles.favorite}
+        />
       </figure>
       <div className={styles.details}>
         <h3 className={styles.title}>{property.title}</h3>

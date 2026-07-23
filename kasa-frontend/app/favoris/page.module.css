@@ -1,0 +1,8 @@
+.container {
+  max-width: var(--container-width);
+  margin: 0 auto;
+  padding: 40px clamp(16px, 4vw, 40px) 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
