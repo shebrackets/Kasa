@@ -19,7 +19,7 @@ export default function RootLayout({ children }) {
     <html lang="fr" className={inter.variable}>
       <body>
         <Header />
-        <main style={{ flex: 1 }}>{children}</main>
+        <main>{children}</main>
         <Footer />
       </body>
     </html>

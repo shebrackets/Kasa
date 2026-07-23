@@ -1,18 +1,23 @@
 import styles from "./Hero.module.css";
 
-export default function Hero() {
+export default function Hero({ title, description, imageSrc, imageAlt = "" }) {
+  const paragraphs = Array.isArray(description) ? description : [description];
+
   return (
     <section className={styles.hero}>
       <header className={styles.textGroup}>
-        <h1 className={styles.title}>Chez vous, partout et ailleurs</h1>
-        <p className={styles.subtitle}>
-          Avec Kasa, vivez des séjours uniques dans des hébergements chaleureux, sélectionnés avec
-          soin par nos hôtes.
-        </p>
+        <h1 className={styles.title}>{title}</h1>
+        {paragraphs.map((paragraph) => (
+          <p key={paragraph} className={styles.subtitle}>
+            {paragraph}
+          </p>
+        ))}
       </header>
-      <figure className={styles.banner}>
-        <img src="/images/hero.jpg" alt="" className={styles.bannerImage} />
-      </figure>
+      {imageSrc && (
+        <figure className={styles.banner}>
+          <img src={imageSrc} alt={imageAlt} className={styles.bannerImage} />
+        </figure>
+      )}
     </section>
   );
 }

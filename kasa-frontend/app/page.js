@@ -9,7 +9,11 @@ export default async function HomePage() {
 
   return (
     <div className={styles.container}>
-      <Hero />
+      <Hero
+        title="Chez vous, partout et ailleurs"
+        description="Avec Kasa, vivez des séjours uniques dans des hébergements chaleureux, sélectionnés avec soin par nos hôtes."
+        imageSrc="/images/hero.jpg"
+      />
       <section className={styles.propertiesSection} aria-labelledby="properties-heading">
         <h2 id="properties-heading" className="sr-only">
           Nos logements

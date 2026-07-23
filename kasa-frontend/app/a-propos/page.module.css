@@ -1,0 +1,78 @@
+.container {
+  max-width: var(--container-width);
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 40px;
+}
+
+.mission {
+  width: 100%;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 494px;
+  grid-template-areas:
+    "title image"
+    "list image"
+    "closing image";
+  column-gap: 16px;
+  row-gap: 16px;
+  align-items: start;
+}
+
+.missionTitle {
+  grid-area: title;
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--color-main-red);
+}
+
+.missionList {
+  grid-area: list;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  list-style: decimal;
+  padding-left: 21px;
+  font-size: 14px;
+  color: var(--color-noir);
+  line-height: 1.4;
+}
+
+.missionFigure {
+  grid-area: image;
+  margin: 0;
+  height: 458px;
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+.missionImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.missionClosing {
+  grid-area: closing;
+  font-size: 18px;
+  font-weight: 500;
+  color: var(--color-main-red);
+  line-height: 1.4;
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding: 24px 16px 40px;
+    gap: 24px;
+  }
+
+  .mission {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "title"
+      "list"
+      "image"
+      "closing";
+  }
+}
