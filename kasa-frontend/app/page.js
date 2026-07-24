@@ -14,8 +14,8 @@ export default async function HomePage() {
         description="Avec Kasa, vivez des séjours uniques dans des hébergements chaleureux, sélectionnés avec soin par nos hôtes."
         imageSrc="/images/hero.jpg"
       />
-      <section className={styles.propertiesSection} aria-labelledby="properties-heading">
-        <h2 id="properties-heading" className="sr-only">
+      <section className={styles.propertiesSection} aria-labelledby="logements-heading">
+        <h2 id="logements-heading" className="sr-only">
           Nos logements
         </h2>
         <ul className={styles.grid}>

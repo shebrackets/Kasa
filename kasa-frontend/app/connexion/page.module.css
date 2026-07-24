@@ -1,0 +1,174 @@
+.container {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 40px clamp(16px, 8vw, 140px) 60px;
+}
+
+.card {
+  background: var(--color-white);
+  border: 1px solid var(--color-gris-light);
+  border-radius: var(--radius-lg);
+  padding: 80px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 38px;
+  width: 742px;
+  max-width: 100%;
+}
+
+.heading {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  text-align: center;
+  width: 100%;
+}
+
+.title {
+  font-size: 32px;
+  font-weight: 700;
+  color: var(--color-main-red);
+}
+
+.description {
+  font-size: 14px;
+  color: var(--color-noir);
+  max-width: 390px;
+  line-height: 1.426;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 22px;
+  width: 100%;
+}
+
+.fields {
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+  width: 360px;
+  max-width: 100%;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  width: 100%;
+}
+
+.label {
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--color-noir);
+}
+
+.input {
+  background: var(--color-white);
+  border: 1px solid var(--color-gris-light);
+  border-radius: 4px;
+  height: 40px;
+  padding: 0 10px;
+  font-size: 12px;
+  font-family: inherit;
+  color: var(--color-noir);
+  width: 100%;
+}
+
+.input:focus-visible {
+  outline: 2px solid var(--color-main-red);
+  outline-offset: 1px;
+}
+
+.error {
+  font-size: 14px;
+  color: #c0392b;
+  text-align: center;
+  width: 360px;
+  max-width: 100%;
+}
+
+.actions {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 22px;
+  width: 360px;
+  max-width: 100%;
+}
+
+.submit {
+  background: var(--color-main-red);
+  color: var(--color-white);
+  height: 36px;
+  width: 230px;
+  border-radius: var(--radius-lg);
+  padding: 8px 32px;
+  font-size: 14px;
+  font-weight: 500;
+  font-family: inherit;
+  border: none;
+  cursor: pointer;
+}
+
+.submit:hover:not(:disabled) {
+  background: var(--color-dark-orange);
+}
+
+.submit:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.forgot {
+  width: 100%;
+  text-align: center;
+}
+
+.linkButton {
+  background: none;
+  border: none;
+  padding: 0;
+  font-family: inherit;
+  font-size: 14px;
+  color: var(--color-main-red);
+  cursor: pointer;
+}
+
+.switchText {
+  width: 100%;
+  text-align: center;
+  font-size: 14px;
+  color: var(--color-main-red);
+}
+
+.linkStrong {
+  font-weight: 500;
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding: 24px 16px 40px;
+  }
+
+  .card {
+    padding: 32px 16px;
+    width: 100%;
+    gap: 38px;
+  }
+
+  .title {
+    font-size: 24px;
+  }
+
+  .description {
+    max-width: 100%;
+  }
+}

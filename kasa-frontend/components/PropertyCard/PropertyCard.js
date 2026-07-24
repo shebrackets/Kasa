@@ -1,12 +1,13 @@
 import Link from "next/link";
 import FavoriteButton from "../FavoriteButton/FavoriteButton";
+import { resolveImageUrl } from "@/lib/api";
 import styles from "./PropertyCard.module.css";
 
 export default function PropertyCard({ property }) {
   return (
-    <Link href={`/properties/${property.id}`} className={styles.card}>
+    <Link href={`/logements/${property.id}`} className={styles.card}>
       <figure className={styles.imageWrapper}>
-        <img src={property.cover} alt={property.title} className={styles.image} />
+        <img src={resolveImageUrl(property.cover)} alt={property.title} className={styles.image} />
         <FavoriteButton
           propertyId={property.id}
           title={property.title}

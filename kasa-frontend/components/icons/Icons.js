@@ -61,3 +61,11 @@ export function ArrowLeftIcon({ color = "currentColor", ...props }) {
   );
 }
 
+export function PlusIcon({ color = "currentColor", ...props }) {
+  return (
+    <svg viewBox="0 0 13 13" width="13" height="13" fill="none" stroke={color} strokeWidth="1.8" xmlns="http://www.w3.org/2000/svg" {...props}>
+      <path d="M6.5 1v11M1 6.5h11" strokeLinecap="round" />
+    </svg>
+  );
+}
+

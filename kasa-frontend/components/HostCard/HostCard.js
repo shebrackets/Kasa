@@ -1,4 +1,5 @@
-import { StarIcon } from "../icons/Icons";
+import { StarIcon } from "../Icons/Icons";
+import { resolveImageUrl } from "@/lib/api";
 import styles from "./HostCard.module.css";
 
 export default function HostCard({ host, rating, className }) {
@@ -7,7 +8,7 @@ export default function HostCard({ host, rating, className }) {
       <h2 className={styles.title}>Votre hôte</h2>
       <div className={styles.host}>
         {host?.picture && (
-          <img src={host.picture} alt={host.name} className={styles.avatar} />
+          <img src={resolveImageUrl(host.picture)} alt={host.name} className={styles.avatar} />
         )}
         <span className={styles.name}>{host?.name}</span>
         {rating != null && (

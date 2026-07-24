@@ -19,7 +19,7 @@ export default function NotFound() {
         <Link href="/" className={styles.ctaButton}>
           Accueil
         </Link>
-        <Link href="/#properties-heading" className={styles.ctaButton}>
+        <Link href="/#logements-heading" className={styles.ctaButton}>
           Logements
         </Link>
       </nav>

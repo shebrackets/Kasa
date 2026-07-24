@@ -1,10 +1,7 @@
 const { listUsers, getUser, createUser, updateUser } = require('../services/usersService');
+const baseStatusFromError = require('../utils/statusFromError');
 
-function statusFromError(e) {
-  if (e && e.status) return e.status;
-  if (e && e.message && /UNIQUE/i.test(e.message)) return 409;
-  return 500;
-}
+const statusFromError = (e) => baseStatusFromError(e, /UNIQUE/i);
 
 async function list(req, res) {
   const db = req.app.locals.db;

@@ -1,6 +1,6 @@
 "use client";
 
-import { HeartIcon } from "../icons/Icons";
+import { HeartIcon } from "../Icons/Icons";
 import { useFavorites } from "@/context/FavoritesContext";
 import styles from "./FavoriteButton.module.css";
 

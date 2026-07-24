@@ -3,7 +3,8 @@ import { notFound } from "next/navigation";
 import Gallery from "@/components/Gallery/Gallery";
 import HostCard from "@/components/HostCard/HostCard";
 import Tag from "@/components/Tag/Tag";
-import { ArrowLeftIcon, PinIcon } from "@/components/icons/Icons";
+import DeletePropertyButton from "@/components/DeletePropertyButton/DeletePropertyButton";
+import { ArrowLeftIcon, PinIcon } from "@/components/Icons/Icons";
 import { getPropertyById } from "@/lib/api";
 import styles from "./page.module.css";
 
@@ -38,6 +39,7 @@ export default async function PropertyPage({ params }) {
             {property.location}
           </p>
           <p className={styles.text}>{property.description}</p>
+          <DeletePropertyButton propertyId={property.id} hostId={property.host?.id} />
         </header>
 
         {property.equipments?.length > 0 && (

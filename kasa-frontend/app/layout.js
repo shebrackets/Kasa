@@ -2,6 +2,7 @@ import { Inter } from "next/font/google";
 import Header from "@/components/Header/Header";
 import Footer from "@/components/Footer/Footer";
 import { FavoritesProvider } from "@/context/FavoritesContext";
+import { AuthProvider } from "@/context/AuthContext";
 import "./globals.css";
 
 const inter = Inter({
@@ -19,11 +20,13 @@ export default function RootLayout({ children }) {
   return (
     <html lang="fr" className={inter.variable}>
       <body>
-        <FavoritesProvider>
-          <Header />
-          <main>{children}</main>
-          <Footer />
-        </FavoritesProvider>
+        <AuthProvider>
+          <FavoritesProvider>
+            <Header />
+            <main>{children}</main>
+            <Footer />
+          </FavoritesProvider>
+        </AuthProvider>
       </body>
     </html>
   );

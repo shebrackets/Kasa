@@ -1,0 +1,407 @@
+.container {
+  flex: 1;
+  max-width: 1168px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 40px clamp(16px, 4vw, 40px) 60px;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 40px;
+  width: 100%;
+}
+
+.backLink {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  background: var(--color-gris-light);
+  color: var(--color-gris-dark);
+  font-size: 14px;
+  font-weight: 500;
+  border-radius: var(--radius-lg);
+  padding: 8px 16px;
+}
+
+.backLink:hover {
+  opacity: 0.85;
+}
+
+.titleRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  width: 100%;
+  flex-wrap: wrap;
+}
+
+.pageTitle {
+  font-size: 24px;
+  font-weight: 500;
+  color: var(--color-noir);
+}
+
+.submitButton {
+  background: var(--color-main-red);
+  color: var(--color-white);
+  border: none;
+  border-radius: var(--radius-lg);
+  padding: 8px 32px;
+  font-size: 14px;
+  font-weight: 500;
+  font-family: inherit;
+  cursor: pointer;
+  flex-shrink: 0;
+  white-space: nowrap;
+}
+
+.submitButton:hover:not(:disabled) {
+  background: var(--color-dark-orange);
+}
+
+.submitButton:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.twoColRow {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  align-items: stretch;
+  gap: 16px;
+  width: 100%;
+}
+
+/* Équipements et Catégories ont des quantités de contenu très différentes :
+   les étirer à la même hauteur (comme Infos / Photos+Hôte) laisserait un grand
+   vide en bas du panneau le plus court. On garde chaque panneau à sa propre
+   hauteur naturelle ici. */
+.twoColRowTop {
+  align-items: start;
+}
+
+.panelInfos,
+.columnB,
+.panelEquipments,
+.panelCategories {
+  min-width: 0;
+}
+
+.columnB {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.panelHost {
+  flex: 1;
+}
+
+.panelInfos,
+.panelPhotos,
+.panelHost,
+.panelEquipments,
+.panelCategories {
+  background: var(--color-white);
+  border: 1px solid var(--color-gris-light);
+  border-radius: var(--radius-lg);
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.panelInfos {
+  padding: 80px;
+}
+
+.panelPhotos,
+.panelHost {
+  padding: 48px 80px;
+}
+
+.panelEquipments,
+.panelCategories {
+  padding: 80px;
+  width: 100%;
+}
+
+.panelTitle {
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--color-noir);
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  width: 100%;
+}
+
+.label {
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--color-noir);
+}
+
+.input,
+.textarea {
+  background: var(--color-white);
+  border: 1px solid var(--color-gris-light);
+  border-radius: 4px;
+  padding: 0 10px;
+  height: 40px;
+  font-size: 12px;
+  font-family: inherit;
+  color: var(--color-noir);
+  width: 100%;
+}
+
+.textarea {
+  height: auto;
+  min-height: 96px;
+  padding: 10px;
+  resize: vertical;
+}
+
+.input::placeholder,
+.textarea::placeholder {
+  color: var(--color-gris-dark);
+}
+
+.input:focus-visible,
+.textarea:focus-visible {
+  outline: 2px solid var(--color-main-red);
+  outline-offset: 1px;
+}
+
+.uploadRow {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  width: 100%;
+}
+
+.uploadPlaceholder {
+  flex: 1;
+  min-width: 0;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  border: 1px solid var(--color-gris-light);
+  border-radius: 4px;
+  padding: 0 10px;
+  font-size: 12px;
+  color: var(--color-gris-dark);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.addButton {
+  flex-shrink: 0;
+  width: 37px;
+  height: 37px;
+  border-radius: var(--radius-sm);
+  background: var(--color-main-red);
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.addButton:hover {
+  background: var(--color-dark-orange);
+}
+
+.inlineAddLink {
+  display: inline-flex;
+  align-self: flex-start;
+  background: none;
+  border: none;
+  padding: 0;
+  font-family: inherit;
+  font-size: 14px;
+  color: var(--color-main-red);
+  cursor: pointer;
+}
+
+.inlineAddLink:hover {
+  text-decoration: underline;
+}
+
+.previewFigure {
+  margin: 8px 0 0;
+  width: 72px;
+  height: 72px;
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+  background: var(--color-gris-light);
+}
+
+.previewImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.galleryList {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 8px;
+}
+
+.galleryItem {
+  position: relative;
+}
+
+.removeButton {
+  position: absolute;
+  top: -6px;
+  right: -6px;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  border: none;
+  background: var(--color-main-red);
+  color: var(--color-white);
+  font-size: 13px;
+  line-height: 1;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.removeButton:hover {
+  background: var(--color-dark-orange);
+}
+
+.equipmentGrid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 8px 24px;
+  width: 100%;
+}
+
+.equipmentItem {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 4px 10px;
+  cursor: pointer;
+  font-size: 12px;
+  color: var(--color-gris-dark);
+}
+
+.equipmentItem:has(.checkbox:checked) span {
+  color: var(--color-main-red);
+  font-weight: 500;
+}
+
+.checkbox {
+  width: 12px;
+  height: 12px;
+  border: 1px solid var(--color-gris-dark);
+  border-radius: 2px;
+  accent-color: var(--color-main-red);
+  cursor: pointer;
+  flex-shrink: 0;
+}
+
+.tagCloud {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+  width: 100%;
+}
+
+.tagPill {
+  display: inline-flex;
+  align-items: center;
+  background: var(--color-gris-light);
+  color: var(--color-gris-dark);
+  font-size: 12px;
+  padding: 8px 16px;
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+}
+
+.tagPill:has(input:checked) {
+  background: var(--color-main-red);
+  color: var(--color-white);
+}
+
+.customTagRow {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  width: 100%;
+}
+
+.customTagInputRow {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  width: 100%;
+}
+
+.customTagInputRow .input {
+  flex: 1;
+}
+
+.customTagList {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  width: 100%;
+}
+
+.error {
+  font-size: 14px;
+  color: #c0392b;
+  text-align: center;
+  width: 100%;
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding: 24px 16px 40px;
+  }
+
+  .titleRow {
+    flex-wrap: nowrap;
+  }
+
+  .pageTitle {
+    font-size: 20px;
+  }
+
+  .submitButton {
+    padding: 8px 20px;
+  }
+
+  .twoColRow {
+    grid-template-columns: 1fr;
+  }
+
+  .panelInfos {
+    padding: 24px;
+  }
+
+  .panelPhotos,
+  .panelHost {
+    padding: 24px;
+  }
+
+  .panelEquipments,
+  .panelCategories {
+    padding: 24px;
+  }
+}

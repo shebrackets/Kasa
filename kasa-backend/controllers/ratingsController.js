@@ -1,9 +1,5 @@
 const { listRatingsForProperty, addRating } = require('../services/ratingsService');
-
-function statusFromError(e) {
-  if (e && e.status) return e.status;
-  return 500;
-}
+const statusFromError = require('../utils/statusFromError');
 
 async function listForProperty(req, res) {
   const db = req.app.locals.db;

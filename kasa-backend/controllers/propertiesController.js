@@ -4,12 +4,26 @@ const {
   createProperty,
   updateProperty,
   deleteProperty,
+  getPropertyOwnerId,
 } = require('../services/propertiesService');
+const baseStatusFromError = require('../utils/statusFromError');
 
-function statusFromError(e) {
-  if (e && e.status) return e.status;
-  if (e && e.message && /(UNIQUE|PRIMARY KEY)/i.test(e.message)) return 409;
-  return 500;
+const statusFromError = (e) => baseStatusFromError(e, /(UNIQUE|PRIMARY KEY)/i);
+
+// Un rôle owner ne doit pouvoir modifier/supprimer que ses propres logements (l'admin peut tout).
+async function assertCanManage(db, req, propertyId) {
+  if (req.user.role === 'admin') return;
+  const ownerId = await getPropertyOwnerId(db, propertyId);
+  if (ownerId == null) {
+    const err = new Error('Property not found');
+    err.status = 404;
+    throw err;
+  }
+  if (String(ownerId) !== String(req.user.id)) {
+    const err = new Error('forbidden: you do not own this property');
+    err.status = 403;
+    throw err;
+  }
 }
 
 async function list(req, res) {
@@ -52,6 +66,7 @@ async function create(req, res) {
 async function update(req, res) {
   const db = req.app.locals.db;
   try {
+    await assertCanManage(db, req, req.params.id);
     const updated = await updateProperty(db, req.params.id, req.body || {});
     res.json(updated);
   } catch (e) {
@@ -62,6 +77,7 @@ async function update(req, res) {
 async function remove(req, res) {
   const db = req.app.locals.db;
   try {
+    await assertCanManage(db, req, req.params.id);
     await deleteProperty(db, req.params.id);
     res.status(204).end();
   } catch (e) {

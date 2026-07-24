@@ -1,9 +1,5 @@
 const { addFavorite, removeFavorite, listFavoritesForUser } = require('../services/favoritesService');
-
-function statusFromError(e) {
-  if (e && e.status) return e.status;
-  return 500;
-}
+const statusFromError = require('../utils/statusFromError');
 
 async function addForProperty(req, res) {
   const db = req.app.locals.db;

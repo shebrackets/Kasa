@@ -3,7 +3,7 @@
 import { useState } from "react";
 import Link from "next/link";
 import Logo from "../Logo/Logo";
-import { HeartIcon, MessageIcon, MenuIcon, CloseIcon } from "../icons/Icons";
+import { HeartIcon, MessageIcon, MenuIcon, CloseIcon } from "../Icons/Icons";
 import styles from "./Header.module.css";
 
 const NAV_LINKS = [
@@ -42,7 +42,7 @@ export default function Header() {
         </Link>
 
         <div className={styles.navRight}>
-          <Link href="/properties/new" className={styles.addLink}>
+          <Link href="/logements/nouveau" className={styles.addLink}>
             +Ajouter un logement
           </Link>
           <div className={styles.iconGroup}>
@@ -83,7 +83,7 @@ export default function Header() {
             ))}
           </ul>
           <Link
-            href="/properties/new"
+            href="/logements/nouveau"
             className={styles.mobileAddButton}
             onClick={() => setIsMenuOpen(false)}
           >

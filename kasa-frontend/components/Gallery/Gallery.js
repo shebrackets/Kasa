@@ -1,3 +1,4 @@
+import { resolveImageUrl } from "@/lib/api";
 import styles from "./Gallery.module.css";
 
 export default function Gallery({ pictures, title, className }) {
@@ -8,12 +9,12 @@ export default function Gallery({ pictures, title, className }) {
 
   return (
     <figure className={className ? `${styles.gallery} ${className}` : styles.gallery}>
-      <img src={main} alt={title} className={styles.mainImage} />
+      <img src={resolveImageUrl(main)} alt={title} className={styles.mainImage} />
       {thumbs.length > 0 && (
         <ul className={styles.thumbs}>
           {thumbs.slice(0, 4).map((picture, index) => (
             <li key={picture} className={styles.thumb}>
-              <img src={picture} alt={`${title} ${index + 2}`} className={styles.thumbImage} />
+              <img src={resolveImageUrl(picture)} alt={`${title} ${index + 2}`} className={styles.thumbImage} />
             </li>
           ))}
         </ul>
